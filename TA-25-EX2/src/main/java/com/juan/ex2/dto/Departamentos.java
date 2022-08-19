@@ -21,21 +21,21 @@ public class Departamentos {
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private int Codigo;
+		private int Id;
 		private String Nombre;
 		private int Presupuesto;
 	
 		@JsonIgnore
 		@OneToMany
-		@JoinColumn(name = "DNI")
+		@JoinColumn(name = "departamento")
 		private  List <Empleados> Empleados;
 
-		public int getCodigo() {
-			return Codigo;
+		public int getId() {
+			return Id;
 		}
 
-		public void setCodigo(int codigo) {
-			Codigo = codigo;
+		public void setId(int id) {
+			Id = id;
 		}
 
 		public String getNombre() {
@@ -59,18 +59,15 @@ public class Departamentos {
 		}
 
 		public void setEmpleados(List<Empleados> empleados) {
-			this.Empleados = empleados;
+			Empleados = empleados;
 		}
 
 		@Override
 		public String toString() {
-			return "Departamentos [Codigo=" + Codigo + ", Nombre=" + Nombre + ", Presupuesto=" + Presupuesto
-					+ ", empleados=" + Empleados + "]";
+			return "Departamentos [Id=" + Id + ", Nombre=" + Nombre + ", Presupuesto=" + Presupuesto + ", Empleados="
+					+ Empleados + "]";
 		}
 
-	
-
-
-	
+		
 
 }
