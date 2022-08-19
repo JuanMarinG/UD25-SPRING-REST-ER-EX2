@@ -19,10 +19,9 @@ public class Empleados {
 	private String DNI;
 	private String Nombre;
 	private String Apellidos;
-	private int Departamento;
 	
 	@ManyToOne
-	@JoinColumn(name = "Codigo")
+	@JoinColumn(name = "Departamento")
 	private Departamentos departamentos;
 
 	public String getDNI() {
@@ -62,6 +61,7 @@ public class Empleados {
 		return "Empleados [DNI=" + DNI + ", Nombre=" + Nombre + ", Apellidos=" + Apellidos + ", departamentos="
 				+ departamentos + "]";
 	}
+
 	
 	
 }
