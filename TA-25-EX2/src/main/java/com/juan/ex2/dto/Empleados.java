@@ -8,26 +8,50 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+
 @Entity
-@Table(name = "Empleados")
+@Table(name="empleados")
 public class Empleados {
 
-	//ATRIBUTOS TABLA EMPLEADOS
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String DNI;
-	private String Nombre;
-	private String Apellidos;
+	private String Nombre;	
+	private String Apellidos;	
 	
 	@ManyToOne
-	@JoinColumn(name = "Codigo")
-	private Departamentos departamentos;
+    @JoinColumn(name="departamento")
+    private Departamentos departamento;
+	
+
+	public Empleados(){}	
+	
+	
+	public Empleados(String Dni,String nombre, String apellidos, Departamentos departamento) {
+		this.DNI = Dni;
+		this.Nombre = nombre;
+		this.Apellidos = apellidos;
+		this.departamento = departamento;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Empleados [DNI=" + DNI + ", nombre=" + Nombre + ", apellidos=" + Apellidos + ", Departamento="
+				+ departamento + "]";
+	}
+
 
 	public String getDNI() {
 		return DNI;
 	}
-
+	
 	public void setDNI(String dNI) {
 		DNI = dNI;
 	}
@@ -37,31 +61,27 @@ public class Empleados {
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.Nombre = nombre;
 	}
+
 
 	public String getApellidos() {
 		return Apellidos;
 	}
 
+
 	public void setApellidos(String apellidos) {
-		Apellidos = apellidos;
+		this.Apellidos = apellidos;
 	}
 
-	public Departamentos getDepartamentos() {
-		return departamentos;
+
+	public Departamentos getDepartamento() {
+		return departamento;
 	}
 
-	public void setDepartamentos(Departamentos departamentos) {
-		this.departamentos = departamentos;
-	}
 
-	@Override
-	public String toString() {
-		return "Empleados [DNI=" + DNI + ", Nombre=" + Nombre + ", Apellidos=" + Apellidos + ", departamentos="
-				+ departamentos + "]";
+	public void setDepartamento(Departamentos departamento) {
+		this.departamento = departamento;
 	}
-
-	
-	
+		
 }
