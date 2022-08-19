@@ -21,7 +21,7 @@ public class Empleados {
 	private String Apellidos;
 	
 	@ManyToOne
-	@JoinColumn(name = "Departamento")
+	@JoinColumn(name = "Codigo")
 	private Departamentos departamentos;
 
 	public String getDNI() {
