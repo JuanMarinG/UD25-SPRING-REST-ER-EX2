@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "Departamentos")
@@ -21,9 +23,8 @@ public class Departamentos {
 		private String Nombre;
 		private int Presupuesto;
 	
-	
-		@OneToMany
-		@JoinColumn(name = "Departamento")
+		@JsonIgnore
+		@OneToMany(mappedBy = "Departamento")
 		private Empleados empleados;
 
 
@@ -74,5 +75,5 @@ public class Departamentos {
 		}
 		
 		
-	
+
 }
