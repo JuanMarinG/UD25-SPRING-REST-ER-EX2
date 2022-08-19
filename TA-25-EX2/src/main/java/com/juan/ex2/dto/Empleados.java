@@ -19,6 +19,7 @@ public class Empleados {
 	private String DNI;
 	private String Nombre;
 	private String Apellidos;
+	private int Departamento;
 	
 	@ManyToOne
 	@JoinColumn(name = "Codigo")
