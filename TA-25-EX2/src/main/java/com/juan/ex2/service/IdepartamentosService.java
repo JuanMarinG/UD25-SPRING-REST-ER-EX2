@@ -15,7 +15,7 @@ public interface IdepartamentosService {
 	public Departamentos guardarDepartamentos (Departamentos departamentos);
 	
 	//DELETE
-	public Departamentos eliminarDepartamento (Long Id);
+	public void eliminarDepartamento (Long Id);
 	
 	//READ
 	public Departamentos departamentosPorId (Long Id);
