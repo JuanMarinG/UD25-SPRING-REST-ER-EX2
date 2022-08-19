@@ -15,7 +15,7 @@ public interface IempleadosService {
 	public Empleados guardarEmpleados (Empleados empleados);
 	
 	//DELETE
-	public Empleados eliminarEmpleado (Long Id);
+	public void eliminarEmpleado (Long Id);
 	
 	//READ
 	public Empleados empleadosPorId (Long Id);
