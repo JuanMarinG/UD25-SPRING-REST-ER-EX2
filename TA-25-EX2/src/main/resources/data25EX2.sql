@@ -11,6 +11,7 @@ CREATE TABLE Empleados (
 DNI varchar(8) primary key not null,
 Nombre nvarchar(100),
 Apellidos nvarchar (255),
+Departamento int,
 CONSTRAINT FK1 FOREIGN KEY (Departamento) REFERENCES Departamentos(Codigo)
 );
 
