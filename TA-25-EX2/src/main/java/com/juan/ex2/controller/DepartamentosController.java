@@ -53,5 +53,10 @@ public class DepartamentosController {
 	return departamento_actualizado;
 	
 	}
+	
+	@DeleteMapping("/departamentos/{Id}")
+	public void eliminarDepartamento(@PathVariable(name="Id")Long Id) {
+		departamentosServiceImpl.eliminarDepartamento(Id);
+	}
 
 }
