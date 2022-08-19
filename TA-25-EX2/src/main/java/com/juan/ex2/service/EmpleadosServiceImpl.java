@@ -35,7 +35,7 @@ public class EmpleadosServiceImpl implements IempleadosService{
 	@Override
 	public void eliminarEmpleado(Long Id) {
 		// TODO Auto-generated method stub
-		iempleadosDAO.deleteById(Id);;
+		iempleadosDAO.deleteById(Id);
 	}
 
 	@Override
