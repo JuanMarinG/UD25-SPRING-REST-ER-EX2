@@ -2,17 +2,17 @@ DROP TABLE IF EXISTS Departamentos;
 DROP TABLE IF EXISTS Empleados;
 
 CREATE TABLE Departamentos (
-Codigo int primary key auto_increment,
-Nombre nvarchar (100),
+Id int primary key auto_increment,
+Nombre varchar (100),
 Presupuesto int
 );
 
 CREATE TABLE Empleados (
-DNI varchar(8) primary key not null,
-Nombre nvarchar(100),
-Apellidos nvarchar (255),
+DNI varchar(8) primary key,
+Nombre varchar(100),
+Apellidos varchar (255),
 Departamento int,
-CONSTRAINT FK1 FOREIGN KEY (Departamento) REFERENCES Departamentos(Codigo)
+FOREIGN KEY (Departamento) REFERENCES Departamentos(Id)
 );
 
 INSERT INTO Departamentos (Nombre, Presupuesto) VALUES ('Dep.Financiero', 10.000);
